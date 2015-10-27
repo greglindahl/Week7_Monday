@@ -7,10 +7,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
     <link rel="stylesheet" href="maps.css">
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapCanvasTwo = document.getElementById('mapTwo');
+
+        var mapOptions = {
+          center: new google.maps.LatLng(-38.346032, 144.311407),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+
+        var mapOptionsTwo = {
+          center: new google.maps.LatLng(51.507351, -0.127758),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        var mapTwo = new google.maps.Map(mapCanvasTwo, mapOptionsTwo);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
   </head>
   <body>
     <h1 id="title">Google Maps Integration</h1>
+    <h3 class="sub-title">Jan Juk Beach, Torquay, AU</h3>
+    <h3 class="sub-title">London, UK</h3>
     <div id="map"></div>
+    <div id="mapTwo"></div>
 
   </body>
 </html>

@@ -3,9 +3,21 @@
   padding-bottom: 50px;
   text-align: center;
 }
-#map {
+
+.sub-title {
+	display: inline-block;
+}
+
+#map, #mapTwo {
   width: 500px;
   height: 400px;
   background-color: #CCC;
   margin: auto;
+}
+
+#map {
+	float: left;
+	display: inline-block;
+	margin-left: 125px;
+	clear: both;
 }
