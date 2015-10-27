@@ -33,9 +33,10 @@
     <script>
       var map;
       var marker;
+      var myLatLng;
 
       function initMap() {
-        var myLatLng = {lat: 39.757609, lng: -105.007005};
+        myLatLng = {lat: 39.757609, lng: -105.007005};
 
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
@@ -62,7 +63,10 @@
         var latInput = $('.lat').val();
         var longInput = $('.long').val();
         var userLatLng = {lat: parseFloat(latInput), lng: parseFloat(longInput)};
+        myLatLng = userLatLng;
+        map.panTo(new google.maps.LatLng(latInput, longInput));
         addMarker(userLatLng, "woo!");
+        console.log(myLatLng);
       }
 
     </script>
